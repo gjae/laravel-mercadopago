@@ -1,0 +1,19 @@
+{
+    "name": "gjae/laravel-mercadopago",
+    "type": "library",
+    "require": {
+        "laravel/framework": "^5.5",
+        "mercadopago/dx-php": "1.5.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Giovanny Avila",
+            "email": "gjavilae@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": { "Gjae\\MercadoPago\\": "src/" }
+    }
+}
