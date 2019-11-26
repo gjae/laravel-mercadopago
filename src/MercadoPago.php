@@ -71,7 +71,24 @@ class MercadoPago
     {
         $this->preference->back_urls    = $preference['back_urls'];
         $this->preference->auto_return  = $preference['auto_return'];
-        
+    }
+
+    public function backUrlAddQS(array $qs = [])
+    {
+        $preferences = [];
+        if( count( $qs ) )
+        {
+            $qs_str = http_build_query($qs);
+
+            $preferences['back_urls'] = $this->getConfig()['back_urls'];
+            foreach($preferences['back_urls'] as $key => $url) {
+                $preferences['back_urls'][$key] = $url.'?'.$qs_str;
+            }
+
+            $preferences['auto_return'] =  $this->getConfig()['auto_return'];
+
+            $this->setPreferences($preferences);
+        }
     }
 
 
@@ -144,6 +161,8 @@ class MercadoPago
         catch(\Exception $e)
         {
             DB::rollback();
+
+            return dd( $e->getMessage() );
             return $e;
         }
     }

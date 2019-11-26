@@ -62,6 +62,8 @@ class MercadoPagoItems
             return $item->getId() == $item_id;
         });
 
+        if( is_bool( $item ) ) return null;
+
         return $this->items[$item];
     }
 
