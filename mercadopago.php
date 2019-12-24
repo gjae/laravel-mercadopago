@@ -51,7 +51,7 @@ return [
     'area_code'             => '',
 
     /**
-     * Especifica las URL de retorno apra el smartcheckout
+     * Especifica las URL de retorno para el smartcheckout
      */
     'back_urls'             => [
 
@@ -63,6 +63,8 @@ return [
 
     ],
 
+    // Indica en que caso de respuesta del pago se ejecutara una autorecarga
+    // Por defecto: approved (el usuario pagador volvera automaticamente en caso de que el pago haya sido completado y aprobado)
     'auto_return'   => 'approved',
 
 
