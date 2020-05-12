@@ -1,6 +1,7 @@
 {
     "name": "gjae/laravel-mercadopago",
     "type": "library",
+    "version": "0.1.0",
     "require": {
         "laravel/framework": ">=5.5",
         "mercadopago/dx-php": "1.5.0"
@@ -16,5 +17,15 @@
     "prefer-stable": false,
     "autoload": {
         "psr-4": { "Gjae\\MercadoPago\\": "src" }
+    },
+    "extra": {
+        "laravel":{
+            "providers": [
+                "Gjae\\MercadoPago\\MPServiceProvider"
+            ],
+            "aliases": {
+                "MercadoPago": "Gjae\\MercadoPago\\Facade"
+            }
+        }
     }
 }

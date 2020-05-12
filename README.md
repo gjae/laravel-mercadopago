@@ -8,14 +8,14 @@ composer require gjae/laravel-mercadopago
 
 ## Configuración básica
 
-en su archivo ``` config/app.php ``` agregue las siguientes lineas:
+en su archivo ``` config/app.php ``` agregue las siguientes lineas (SOLO PARA VERSIONES DE LARAVEL <= 5.4):
 
 en su arreglo de proveedores de servicio ( providers ):
 ```php 
 Gjae\MercadoPago\MPServiceProvider::class, 
 ```
 
-agregue el siguiente facade a su lista de aliases:
+agregue el siguiente facade a su lista de aliases (SOLO PARA VERSIONES DE LARAVEL <= 5.4):
 ```php
 'MercadoPago' => Gjae\MercadoPago\Facade::class,
 ```
