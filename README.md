@@ -221,3 +221,9 @@ public function successResponse(MPResponse $request)
     $transaction = $request->getTransaction();
 }
 ```
+
+## Nota:
+Cuando el archivo de configuración tenga en true la opcion "local_debug"; la no se emitira un init_point con la URL de mercadopago, esto es para que el usuario no cree  transacciones que no se realizaran dentro de la pasarela y pueda probar tranquilamente el funcionamiento sin esperar respuestas del servidor de mercadopago sin necesidad, cuando este listo para probar el funcionamiento completo bien sea en producción o en modo sandbox, cambie esta opcion a false
+
+### ToDo
+- [ ] Emitir excepción cuando se encuentre la aplicación en modo debug local
